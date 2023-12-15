@@ -2,10 +2,11 @@
 import MyCard from '../card/MyCard.vue'
 
 const props = defineProps({
-  items: Array
+  items: Array,
+  isFavorites: Boolean
 })
 
-const emit = defineEmits(['addFavorite'])
+const emit = defineEmits(['addFavorite', 'addToCart'])
 </script>
 
 <template>
@@ -17,9 +18,10 @@ const emit = defineEmits(['addFavorite'])
       :imageUrl="item.imageUrl"
       :price="item.price"
       :title="item.title"
-      :onClickAdd="onClickAdd"
-      :onClickFavorite="() => emit('addFavorite', item)"
+      :onClickAdd="isFavorites ? null : () => emit('addToCart', item)"
+      :onClickFavorite="isFavorites ? null : () => emit('addFavorite', item)"
       :isFavorite="item.isFavorite"
+      :isAdded="item.isAdded"
     />
   </div>
 </template>

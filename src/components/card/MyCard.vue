@@ -28,7 +28,7 @@ defineProps({
         <span class="text-slate-400">Price</span>
         <b>{{ price }} $</b>
       </div>
-      <img @click="onClickAdd()" :src="!isAdded ? '/plus.svg' : '/checked.svg'" alt="Add" />
+      <img @click="onClickAdd" :src="!isAdded ? '/plus.svg' : '/checked.svg'" alt="Add" />
     </div>
   </div>
 </template>
