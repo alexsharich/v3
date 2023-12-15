@@ -2,18 +2,17 @@
 import { inject } from 'vue'
 import CartItem from '../cartItem/CartItem.vue'
 
-const {cart, removeFromCart}  = inject('cart')
-
+const { cart, removeFromCart } = inject('cart')
 </script>
 <template>
-  <div class="flex flex-col flex-1 gap-4">
+  <div class="flex flex-col flex-1 gap-4" v-auto-animate>
     <CartItem
       v-for="item in cart"
       :key="item.id"
       :title="item.title"
       :price="item.price"
       :image-url="item.imageUrl"
-      @on-click-remove="()=>removeFromCart(item)"
+      @on-click-remove="() => removeFromCart(item)"
     />
   </div>
 </template>
