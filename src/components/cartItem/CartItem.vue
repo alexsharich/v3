@@ -16,7 +16,7 @@ defineProps({
       <div class="flex justify-between mt-2">
         <b>{{ price }} $</b>
         <img
-        @click="emit('onClickRemove')"
+          @click="emit('onClickRemove')"
           class="opacity-40 hover:opacity-100 cursor-pointer transition"
           src="/close.svg"
           alt="Close"
